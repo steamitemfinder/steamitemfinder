@@ -1,0 +1,1 @@
+{"mysql":"sif:sif@tcp(127.0.0.1:3306)/sif","maxOpenConns":10,"listenPort":"3101","apikey":"","rootUrl":"http://localhost","apiurl":"http://api.steampowered.com"}

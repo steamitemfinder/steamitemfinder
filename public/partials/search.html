@@ -1,0 +1,19 @@
+<div class="all-100">
+    <div id="tooltip"></div>
+    <h2>Homepage</h2>
+
+    <form class="ink-form" ng-submit="search(query)">
+        <select title="Only Team Fortess 2 is available for now"><option>Team Fortress 2</option></select>
+        <input type="text" name="query" id="query" ng-model="query" placeholder="Sandvich"/>
+        <button class="ink-button">Search</button>
+    </form>
+
+    <div id="result">
+        <p style="padding-top:160px; text-align:center;"  ng-cloak class="ng-cloak" ng-show="message">{{message}}</p>
+        <div ng-cloak class="ng-cloak" ng-show="items" ng-repeat="item in items" class="item">
+            <div style="position: relative; float: left;">
+                <img ng-mousemove="trackMouse($event)" ng-mouseenter="showTip(item)" ng-mouseleave="hideTip()" class="tip item"  ng-src="{{item.image_url}}" ng-click="find(item)"/>
+            </div>
+        </div>
+    </div>
+</div>

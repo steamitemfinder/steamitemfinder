@@ -1,0 +1,61 @@
+<div class="all-100">
+    <div id="tooltip"></div>
+    <div ng-show="item" id="find" style="text-align:center;">
+        <h2 ng-cloak class="ng-cloak">Who's got <span style="font-style:italic">{{item.item_name}}?<span ng-show="serie"> (any series)</span></span></h2>
+
+        <div ng-show="notlogged" ng-cloak class="ng-cloak">
+            <p>You need to sign in through Steam to search if one of your friends has it.</p>
+            <p><a href="/steam/login"><img src="https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png"/></a></p>
+        </div>
+
+        <div ng-show="user" ng-cloak class="ng-cloak" id="resultok" ng-show="hasresultok">
+            <div>
+                <div ng-show="message" class="ink-progress-bar">
+                    <span class="caption">{{message}} <i ng-show="loading" class="fa fa-cog fa-spin"></i></span>
+                    <div class="bar grey" style="width:{{pourc}}%"></div>
+                </div>
+            </div>
+            <h2>{{item.item_name}} found: {{sum}}</h2>
+            <div class="minibackpack clearfix" ng-cloak class="ng-cloak" ng-show="hasresultok" ng-repeat="sifBp in resultok">
+            <h3><a href="/profile/{{sifBp.Player.SteamId}}/inventory/440">{{sifBp.Player.PersonaName}}</a></h3>
+                <ul>
+                    <li ng-mousemove="trackMouse($event)" ng-mouseenter="showTip(sifBp)" ng-mouseleave="hideTip()" class="sifbpli">
+                        <a href="/profile/{{sifBp.Player.SteamId}}/inventory/440">
+                            <img class="player state{{sifBp.Player.PersonaState}}" ng-src="{{sifBp.Player.AvatarMedium}}"/>
+                        </a>
+                    </li>
+
+                    <li ng-repeat="sifItem in sifBp.Items" ng-mousemove="trackMouse($event)" ng-mouseenter="showTip(sifItem)" ng-mouseleave="hideTip()" class="sifbpli">
+                        <a href="/profile/{{sifBp.Player.SteamId}}/inventory/440/item/{{sifItem.Id}}">
+                            <span class="sifitemspan">
+                                <img class="item {{sifItem.Qualities}}" ng-src="{{sifItem.ImageUrl}}"/>
+                            </span>
+                            <span class="attribute">
+                                <span ng-show="sifItem.CraftedById && sifItem.CraftNumber" class="craftnumber">#{{sifItem.CraftNumber}}</span>
+                                <span ng-show="sifItem.Series" class="series">#{{sifItem.Series}}</span>
+                                <span class="untouched"><i class="fa {{sifItem.TagsClass}}"></i></span>
+                                <span ng-show="sifItem.GiftedDate" class="gifted"><i class="fa fa-gift"></i></span>
+                                <span ng-show="sifItem.PaintCan" class="painted"><i class="fa fa-paint-brush"></i></span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div ng-cloak class="ng-cloak" ng-show="hasresultno" id="resultno">
+        <h3>No {{item.item_name}}</h3>
+            <a ng-mousemove="trackMouse($event)" ng-mouseenter="showTip(sifBp)" ng-mouseleave="hideTip()" ng-repeat="sifBp in resultno" href="/profile/{{sifBp.Player.SteamId}}/inventory/440"><img class="player" ng-src="{{sifBp.Player.AvatarMedium}}"/></a>
+        </div>
+
+        <br/>
+
+        <div ng-cloak class="ng-cloak" ng-show="hasresultko" id="resultko">
+        <h3>Private backpacks</h3>
+            <a ng-mousemove="trackMouse($event)" ng-mouseenter="showTip(sifBp)" ng-mouseleave="hideTip()" ng-repeat="sifBp in resultko" href="{{sifBp.Player.ProfileUrl}}" target="_blank"><img class="player" ng-src="{{sifBp.Player.AvatarMedium}}"/></a>
+        </div>
+    </div>
+
+    <p ng-cloak class="ng-cloak" ng-show="error" class="error">{{error}}</p>
+</div>
+

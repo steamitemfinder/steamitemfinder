@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sifApp">
+    <head>
+        <meta charset="utf-8">
+        <base href="/">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Steam Item Finder</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+        <link rel="stylesheet" type="text/css" href="/css/ink-flex.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+        <!-- load Ink's css for IE8 -->
+        <!--[if lt IE 9 ]>
+            <link rel="stylesheet" href="/css/ink-ie.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <![endif]-->
+
+        <!-- <script type="text/javascript" src="/js/ink-all.min.js"></script> -->
+        <script type="text/javascript" src="/js/angular.min.js"></script>
+        <script type="text/javascript" src="/js/angular-route.min.js"></script>
+        <script type="text/javascript" src="/js/app.js"></script>
+        <script type="text/javascript" src="/js/controllers.js"></script>
+        <script type="text/javascript" src="/js/filters.js"></script>
+
+    </head>
+
+    <body>
+        <div class="wrap">
+            <div class="ink-grid">
+                <!--[if lte IE 9 ]>
+                <div class="ink-alert basic" role="alert">
+                    <button class="ink-dismiss">&times;</button>
+                    <p>
+                        <strong>You are using an outdated Internet Explorer version.</strong>
+                        Please <a href="http://browsehappy.com/">upgrade to a modern browser</a> to improve your web experience.
+                    </p>
+                </div>
+                -->
+
+                <header class="vertical-space" ng-controller="HeaderCtrl">
+                    <h1>Steam Item Finder <sup style="font-size:30%; top: -1.5em;">BETA</sup><small>Someone close to you may have what you want</small></h1>
+                    <nav class="ink-navigation">
+                        <ul class="menu horizontal black">
+                            <li class="active"><a href="/">home</a></li>
+                            <li style="float: right">
+                                <a target="_self" ng-cloak class="ng-cloak" ng-show="notlogged" href="/steam/login"><img src="//steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_small.png" alt="login with steam"/></a>
+                                <a class="profilelink" target="_self" ng-cloak class="ng-cloak" ng-show="user" href="/profile/{{user.SteamId}}/inventory/440" title="Hello {{user.PersonaName}}!"><img ng-src="{{user.Avatar}}" ng-attr-class="state{{user.PersonaState}} player"/></a>
+                            </li>
+                            <li style="float: right;" ng-show="user">
+                                <a target="_self" style="padding: 8px;" id="logout" title="Click here to disconnect" href="/steam/logout" class="tip"><span class="fa fa-user-times"></span></a>
+    
+                            </li>
+                            <li style="float: right;">
+                                <a style="padding: 8px;" title="Steam group" href="http://steamcommunity.com/groups/steamitemfinder"><span class="fa fa-steam"></span></a>
+    
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+                <p style="margin: 5%" ng-show="_">this website couldn't load javascript.<br/>sorry.<br/>if you have javascript enabled and this problem remainds: <a href="http://steamcommunity.com/groups/steamitemfinder/discussions">Steam Item Finder forum</a>.</p>
+                <div class="column-group horizontal-gutters" ng-view> </div>
+
+            </div>
+            <div class="push"></div> 
+        </div>
+        <footer class="clearfix">
+            <div class="ink-grid">
+                <ul class="unstyled inline half-vertical-space">
+                    <li><a href="http://steamcommunity.com/groups/steamitemfinder/discussions">Feedback / Suggestions</a></li>
+                </ul>
+                <p class="note">Powered by <a href="http://steampowered.com">Steam</a></p>
+            </div>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,419 @@
+
+body, html {
+height: 100%;
+background: #CFECDD;
+}
+
+header h1 small:before  {
+content: "|";
+margin: 0 0.5em;
+        font-size: 1.6em;
+}
+
+body footer {
+background: #ccc;
+margin-top: 25px;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+display: none !important;
+}
+img.player {
+margin: 5px;
+padding: 1px;
+filter: none;
+}
+
+#bpwrapper img.player {
+    margin: 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+body .ink-navigation ul.menu li a.profilelink {
+    padding: 0;
+}
+
+#backpack #player p {
+    margin-bottom: 1px;
+    margin-top: 5px;
+}
+
+#backpack #player ul {
+    list-style: square;
+    padding: 0 0 0 1.45em;
+    margin: 0;
+    float: none;
+}
+
+img.player.state1 {
+    background-color: #57cbde;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,rgba(83,164,196,1)), color-stop(95%,rgba(69,128,151,1)));background: -moz-linear-gradient( top, rgba(83,164,196,1) 5%, rgba(69,128,151,1) 95%);background: -webkit-linear-gradient( top, rgba(83,164,196,1) 5%, rgba(69,128,151,1) 95%);background: -o-linear-gradient( top, rgba(83,164,196,1) 5%, rgba(69,128,151,1) 95%);background: -ms-linear-gradient( top, rgba(83,164,196,1) 5%, rgba(69,128,151,1) 95%);background: linear-gradient( to bottom, rgba(83,164,196,1) 5%, rgba(69,128,151,1) 95%);  /* IE <= 9 doesn't support rounded corners and gradient.  The gradient isn't too noticable so just disable the filter in IE9 */
+}
+img.player.state0 {
+background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#515151), color-stop(95%,#474747));filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#515151', endColorstr='#474747',GradientType=0 );background: -moz-linear-gradient( top, #515151 5%, #474747 95%);background: -webkit-linear-gradient( top, #515151 5%, #474747 95%);background: -o-linear-gradient( top, #515151 5%, #474747 95%);background: -ms-linear-gradient( top, #515151 5%, #474747 95%);background: linear-gradient( to bottom, #515151 5%, #474747 95%);
+}
+
+
+img.player.state2 {
+    background-color: #90ba3c;
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,rgba(143,185,59,1)), color-stop(95%,rgba(110,140,49,1)));background: -moz-linear-gradient( top, rgba(143,185,59,1) 5%, rgba(110,140,49,1) 95%);background: -webkit-linear-gradient( top, rgba(143,185,59,1) 5%, rgba(110,140,49,1) 95%);background: -o-linear-gradient( top, rgba(143,185,59,1) 5%, rgba(110,140,49,1) 95%);background: -ms-linear-gradient( top, rgba(143,185,59,1) 5%, rgba(110,140,49,1) 95%);background: linear-gradient( to bottom, rgba(143,185,59,1) 5%, rgba(110,140,49,1) 95%);  /* IE <= 9 doesn't support rounded corners and gradient.  The gradient isn't too noticable so just disable the filter in IE9 */
+    filter: none;
+}
+
+nav {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#result {
+    position: relative;
+    min-height: 400px; 
+    overflow: auto;
+    background-color: #1a1a1a; margin-top: 2%; margin-bottom: 10%;
+    padding: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#result img.item {
+    max-width:90px;
+    max-height: 90px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#result img.item:hover {
+border: 1px solid #bfbfbf;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -120px;
+    overflow: auto;
+}
+
+.push, footer {
+    height: 120px;
+    margin-top: 0;
+}
+
+img.item, span.noitem {
+    background-color: #363636;
+    border: 1px solid #1a1a1a;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 1px #1a1a1a inset;
+}
+
+img.item:hover {
+    box-shadow: 0 0 1px 2px #1a1a1a inset;
+}
+
+img.item {
+    margin: 5px;
+}
+
+img.item.quality0 {
+    border: 1px solid #B2B2B2;
+}
+
+img.item.quality1 {
+    border: 1px solid #4D7A55;
+}
+
+img.item.quality3 {
+    border: 1px solid #476291;
+}
+
+img.item.quality5, img.item.quality12 {
+    border: 1px solid #8650AC;
+}
+
+img.item.quality6 {
+    border: 1px solid #FFD700;
+}
+
+img.item.quality7, img.item.quality9 {
+    border: 1px solid #70B04A;
+}
+
+img.item.quality8 {
+    border: 1px solid #A50F79;
+}
+
+img.item.quality11 {
+    border: 1px solid #CF6A32;
+}
+
+img.item.quality13 {
+    border: 1px solid #38F3AB;
+}
+
+img.item.quality14 {
+    border: 1px solid #830000;
+}
+
+
+img.item.quality0:hover {
+    box-shadow: 0 0 1px 1px #B2B2B2 inset;
+}
+
+img.item.quality1:hover {
+    box-shadow: 0 0 1px 1px #4D7A55 inset;
+}
+
+img.item.quality3:hover {
+    box-shadow: 0 0 1px 1px #476291 inset;
+}
+
+img.item.quality5:hover, img.item.quality12:hover {
+    box-shadow: 0 0 1px 1px #8650AC inset;
+}
+
+img.item.quality6:hover {
+    box-shadow: 0 0 1px 1px #FFD700 inset;
+}
+
+img.item.quality7:hover, img.item.quality9:hover {
+    box-shadow: 0 0 1px 1px #70B04A inset;
+}
+
+img.item.quality8:hover {
+    box-shadow: 0 0 1px 1px #A50F79 inset;
+}
+
+img.item.quality11:hover {
+    box-shadow: 0 0 1px 1px #CF6A32 inset;
+}
+
+img.item.quality13:hover {
+    box-shadow: 0 0 1px 1px #38F3AB inset;
+}
+
+img.item.quality14:hover {
+    box-shadow: 0 0 1px 1px #830000 inset;
+}
+
+img.item.uncraftable {
+    border-style: dashed;
+}
+
+img.item.untradable {
+    box-shadow: 0 0 1px 1px red inset;
+}
+
+img.item.untradable:hover {
+    box-shadow: 0 0 1px 2px red inset;
+}
+
+.ink-navigation ul.menu.horizontal li #logout {
+    padding: 0;
+}
+
+#tooltip {
+    //margin: 300px;
+    display: none;
+    margin-top: 10px;
+    position: absolute;
+    background-color: #1a1a1a;
+    color: #bfbfbf;
+    padding: 5px;
+    z-index: 99;
+    border: 1px solid #363636;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#tooltip h5 {
+    color: #bfbfbf;
+    padding:0;
+    margin:0;
+}
+
+#tooltip h5 {
+    color: #bfbfbf;
+    padding:0;
+    margin:0;
+    margin-bottom: 5px;
+}
+
+#tooltip p {
+    color: #bfbfbf;
+    padding:0;
+    margin:0;
+    font-size: 75%;
+}
+
+#tooltip p:first-letter {
+    text-transform: uppercase;
+}
+
+#resultno, #resultko {
+    text-align: left;
+}
+
+
+#find img.player {
+    border: 1px solid #333;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    //position: absolute;
+}
+
+
+#tooltip .orange {
+    color: #CF7336;
+}
+
+#tooltip .red {
+    color: #FF4040;
+}
+
+#resultok div.minibackpack, #bpwrapper, #backpack {
+    background-color: #1A1A1A;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#resultok div.minibackpack {
+    padding: 0px;
+    margin: 10px 0px 10px 0px;
+}
+
+#backpack {
+    padding: 5px;
+    width: 960px;
+    margin: auto;
+}
+
+#backpack ul {
+    list-style: none;
+    //margin: 0;
+    padding: 0;
+    float: left;
+}
+
+#resultok ul {
+    list-style: none;
+    float: left;
+}
+
+#backpack div.page h5 {
+    margin: 5px;
+    padding: 0;
+}
+
+#backpack div.page ul {
+    margin: 0em 0em 1em 0em;
+}
+
+#resultok div.ink-progress-bar {
+    background-color: #CFECDD ;
+}
+
+#resultok div.minibackpack h3 {
+    margin: 0px 0px 0px 33px;
+    font-size: 1.3em;
+    position: absolute;
+}
+
+#resultok div.minibackpack h3 a {
+    color: #404040;
+}
+
+#resultok div.minibackpack h3 a:hover {
+    color: #404040;
+    text-decoration: none;
+}
+
+#resultok h2 {
+    text-align: left;
+}
+
+li.sifbpli {
+    //display: block;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    margin: 4px;
+}
+
+#backpack li.sifbpli {
+    margin: 0;
+}
+
+li.sifbpli a span {
+    //display: table-cell;
+}
+
+li.sifbpli span.noitem {
+    
+    margin: 5px;
+}
+
+#resultok li.sifbpli a span img {
+    width: 66px;
+    height: 66px;
+}
+
+#backpack li.sifbpli a span img, #backpack li.sifbpli span.noitem {
+    width: 85px;
+    height: 85px;
+}
+
+
+li.sifbpli a span img, li.sifbpli span.noitem {
+    display: block;
+}
+
+li.sifbpli a span.attribute span {
+    font-size: 12px;
+    color: #ccc;
+    position: absolute;
+    z-index: 42;
+    //display: none;
+}
+
+li.sifbpli a span.attribute span.series {
+    top: 5px;
+    left: 9px;
+    display: block;
+}
+
+li.sifbpli a span.attribute span.craftnumber {
+    top: 5px;
+    left: 9px;
+    display: block;
+}
+
+li.sifbpli a span.attribute span.painted {
+    top: 5px;
+    right: 8px;
+    display: block;
+}
+
+li.sifbpli a span.attribute span.untouched {
+    bottom: 5px;
+    left: 8px;
+    color: #666;
+    display: block;
+}
+
+li.sifbpli a span.attribute span.gifted {
+    right: 9px;
+    bottom: 5px;
+    color: #666;
+    display: block;
+}

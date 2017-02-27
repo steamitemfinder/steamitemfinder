@@ -1,0 +1,29 @@
+<div class="all-100 item440">
+    <div id="tooltip"></div>
+
+    <div id="bpwrapper">
+        <div id=item" class="clearfix" ng-cloak class="ng-cloak" ng-show="sifBp.Item" style="padding: 20px;">
+            <h2 style="text-align: center">{{sifBp.Item.Name}}</h2>
+            <h5 style="text-align: center">Level {{sifBp.Item.Level}} {{sifBp.Item.TypeName}}</h5>
+            <h4 style="text-align: center">Property of <a href="/profile/{{sifBp.Player.SteamId}}/inventory/440">{{sifBp.Player.PersonaName}}</a> <img class="player state{{sifBp.Player.PersonaState}}" src="{{sifBp.Player.Avatar}}"></h4>
+            <p style="text-align: center; margin: 10px">
+                <a target="_blank" href="{{sifBp.Player.ProfileUrl}}inventory#440_2_{{sifBp.Item.Id}}">
+                    <span><img class="item {{sifBp.Item.Qualities}}" ng-src="{{sifBp.Item.ImageUrl}}"/></span>
+                </a>
+                <ul class="attribute">
+                    <li><a href="/item/{{sifBp.Item.DefIndex}}">Find your friends who have it</a></li>
+                    <li><a target="_blank" href="http://wiki.teamfortress.com/scripts/itemredirect.php?id={{sifBp.Item.DefIndex}}&lang=en_US">Wiki article</a></li>
+                    <li><a target="_blank" href="{{sifBp.Player.ProfileUrl}}inventory#440_2_{{sifBp.Item.Id}}">Inventory link</a></li>
+                    <li><a target="_blank" href="http://www.tf2outpost.com/item/440,{{sifBp.Item.Id}}">tf2outpost history</a></li>
+                    <li><a target="_blank" href="http://backpack.tf/item/{{sifBp.Item.Id}}">bp.tf history</a></li>
+                    <li ng-show="sifBp.Item.CraftedById && sifBp.Item.CraftNumber" class="craftnumber">Craft number: #{{sifBp.Item.CraftNumber}}</li>
+                    <li ng-show="sifBp.Item.Series" class="series">Series: #{{sifBp.Item.Series}}</li>
+                    <li ng-show="sifBp.Item.TagsClass" class="untouched">Tags: <i class="fa {{sifBp.Item.TagsClass}}"></i></li>
+                    <li ng-show="sifBp.Item.Origin">Origin: {{sifBp.Item.Origin}}</li>
+                    <li ng-show="sifBp.Item.GiftedById" class="gifted">Gifted by {{sifBp.Item.GiftedByPersonaName}}</li>
+                    <li ng-show="sifBp.Item.PaintCan" class="painted"><i class="fa fa-paint-brush"></i> Painted</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</div>

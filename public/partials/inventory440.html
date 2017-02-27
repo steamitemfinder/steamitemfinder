@@ -1,0 +1,43 @@
+<div class="all-100 inventory440">
+    <div id="tooltip"></div>
+
+    <div id="bpwrapper">
+        <h6 class="error" ng-show="error" style="padding:30px; color:red;">{{error}}</h6>
+        <div id="backpack" class="clearfix" ng-cloak class="ng-cloak" ng-show="sifBp.PagesOfItems">
+            <div id="player" class="clearfix">
+                <ul style="float:right; margin-top: 1em;">
+                    <li>Capacity: {{sifBp.Size}} items</li>
+                    <li>{{sifBp.Stats.Total}} items in this inventory</li>
+                    <li>{{sifBp.Stats.Untouched}} untouched items</li>
+                    <li>{{sifBp.Stats.Keys}} keys</li>
+                    <li>{{sifBp.Stats.RawMetal}} raw metal</li>
+                    <li><a href="http://steamrep.com/profiles/{{sifBp.Player.SteamId}}">SteamRep profile</a></li>
+                </ul>
+                <p style="margin-bottom: 1em">Backpack of <a target="_blank" href="{{sifBp.Player.ProfileUrl}}">{{sifBp.Player.PersonaName}}</a>
+                <br/>
+                <img class="player state{{sifBp.Player.PersonaState}}" src="{{sifBp.Player.AvatarFull}}"/></p>
+            </div>
+            <div ng-repeat="page in sifBp.PagesOfItems track by $index" class="page clearfix">
+                <h5 ng-hide="$first">Page {{$index}}</h5>
+                <h5 ng-show="$first && page">New items</h5>
+                <ul class="page" ng-show="page">
+                    <li ng-repeat="sifItem in page track by $index" ng-mousemove="trackMouse($event)" ng-mouseenter="showTip(sifItem)" ng-mouseleave="hideTip()" class="sifbpli" >
+                        <a ng-show="sifItem" href="/profile/{{sifBp.Player.SteamId}}/inventory/440/item/{{sifItem.Id}}">
+                            <span>
+                                <img class="item {{sifItem.Qualities}}" ng-src="{{sifItem.ImageUrl}}"/>
+                            </span>
+                            <span class="attribute">
+                                <span ng-show="sifItem.CraftedById && sifItem.CraftNumber" class="craftnumber">#{{sifItem.CraftNumber}}</span>
+                                <span ng-show="sifItem.Series" class="series">#{{sifItem.Series}}</span>
+                                <span class="untouched"><i class="fa {{sifItem.TagsClass}}"></i></span>
+                                <span ng-show="sifItem.GiftedById" class="gifted"><i class="fa fa-gift"></i></span>
+                                <span ng-show="sifItem.PaintCan" class="painted"><i class="fa fa-paint-brush"></i></span>
+                            </span>
+                        </a>
+                        <span ng-hide="sifItem" class="noitem"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
